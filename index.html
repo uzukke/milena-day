@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz aniversário, meu amor!!!</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Nova fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap" rel="stylesheet"> <!-- Fonte mais fofa -->
+    <link rel="icon" href="assets/images/celebration.gif" type="image/gif"> <!-- Imagem da aba do navegador -->
+</head>
+<body>
+    <div id="lockScreen" class="lock-screen">
+        <p id="lockMessage">...</p>
+        <p id="currentTime"></p> <!-- Elemento para exibir a hora -->
+    </div>
+    <div id="content" class="content">
+        <div class="card">
+            <p id="initialText">Clique em qualquer lugar para começar e continue clicando para revelar as mensagens e imagens.</p>
+            <div id="message">
+                <img id="gifImage" src="assets/images/celebration.gif" alt="Celebration" class="hidden">
+                <div id="carousel" class="hidden">
+                    <img src="assets/images/photo01.jpg" alt="Photo 1" class="carousel-image">
+                    <img src="assets/images/photo02.jpg" alt="Photo 2" class="carousel-image hidden">
+                    <img src="assets/images/photo03.jpg" alt="Photo 3" class="carousel-image hidden">
+                    <img src="assets/images/photo04.jpg" alt="Photo 4" class="carousel-image hidden">
+                    <img src="assets/images/photo05.jpg" alt="Photo 5" class="carousel-image hidden">
+                    <img src="assets/images/photo06.jpg" alt="Photo 6" class="carousel-image hidden">
+                    <img src="assets/images/photo07.jpg" alt="Photo 7" class="carousel-image hidden">
+                    <img src="assets/images/photo08.jpg" alt="Photo 8" class="carousel-image hidden">
+                    <img src="assets/images/photo09.jpg" alt="Photo 9" class="carousel-image hidden">
+                    <img src="assets/images/photo10.jpg" alt="Photo 10" class="carousel-image hidden">
+                </div>
+                <p class="phrase hidden">Feliz Aniversário!</p>
+                <p class="phrase hidden" style="color: #C00000; font-weight: bold;">EU TE AMO!</p>
+                <p class="phrase hidden">Pode parecer simples, mas és a única</p>
+                <p class="phrase hidden" style="margin-top: -10px;">e última pessoa a quem confiei essas palavras.</p>
+            </div>
+        </div>
+    </div>
+    <audio id="backgroundMusic" preload="auto" loop>
+        <source src="assets/music/happy-birthday.mp3" type="audio/mpeg">
+        <source src="assets/music/happy-birthday.ogg" type="audio/ogg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/music.js"></script>
+    <script src="js/gifAnimation.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/timeLock.js"></script>
+</body>
+</html>

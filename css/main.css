@@ -1,0 +1,130 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #ffb6c1 50%, #ffffff); /* Cor de fundo que destaca mais o card */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte mais fofa */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Largura das fotos Instax */
+    height: 450px; /* Altura aumentada */
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1s; /* Atraso de 1 segundo */
+}
+
+.hidden {
+    display: none;
+}
+
+.phrase {
+    margin: 10px 0;
+}
+
+#carousel {
+    margin: 10px 0;
+    position: relative;
+    width: 100%;
+    height: 300px; /* Ajuste conforme necessário */
+    overflow: hidden;
+    opacity: 0;
+    animation: growHeight 2s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
+    animation-delay: 1s; /* Atraso de 1 segundo */
+}
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.carousel-image:not(.hidden) {
+    opacity: 1;
+}
+
+#gifImage {
+    width: 100%;
+    max-width: 300px;
+    height: 300px; /* Ajuste para corresponder ao tamanho do carrossel */
+    object-fit: cover; /* Manter a proporção da imagem */
+    margin: 10px 0;
+    animation: growHeight 2s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
+    animation-delay: 1s; /* Atraso de 1 segundo */
+}
+
+#initialText {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center; /* Centralizar o texto */
+}
+
+.lock-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Cor de fundo preta */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 1000;
+    pointer-events: all; /* Impede interações com o conteúdo abaixo */
+    text-align: center; /* Centralizar o texto */
+    padding: 20px; /* Adicionar padding para evitar cortes */
+    box-sizing: border-box; /* Incluir padding no cálculo da largura/altura */
+}
+
+.lock-screen.hidden {
+    display: none;
+    pointer-events: none; /* Permite interações quando oculto */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .card {
+        width: 300px; /* Largura das fotos Instax */
+        height: 450px; /* Altura aumentada */
+    }
+    .lock-screen {
+        padding: 20px; /* Adicionar padding para centralizar melhor o texto */
+        font-size: 18px; /* Reduzir o tamanho da fonte para caber melhor na tela */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growHeight {
+    from {
+        height: 0;
+    }
+    to {
+        height: 300px; /* Altura do carrossel */
+    }
+}
